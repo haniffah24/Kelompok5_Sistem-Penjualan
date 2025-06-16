@@ -3,7 +3,7 @@ session_start();
 include('../function/config.php');
 $db = new Database();
 
-$result = $db->login($_POST['email'], $_POST['password']);
+$result = $db->login($_POST['username'], $_POST['password']);
 
 if ($result === "OK:LOGGED") {
     $user = $db->query("SELECT * FROM user WHERE email LIKE ?", array($_POST['email']), true);

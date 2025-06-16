@@ -27,48 +27,41 @@ if (isset($_SESSION['user'])) {
 	</script>
 	
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="../dist/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../dist/assets/css/azzara.min.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/azzara.min.css">
 </head>
 <body class="login">
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn" style="display: block;">
 			<h3 class="text-center">Log In</h3>
 			<div class="login-form">
-                <div class="card-body">
-                    <?php if (isset($_GET['pesan'])) : ?>
-                        <div class="alert alert-danger" role="alert">
-                            <?php if ($_GET['pesan'] == 'gagal') : ?>
-                                Email atau Password salah!
-                            <?php endif; ?>
-                            <?php if ($_GET['pesan'] == 'refresh') : ?>
-                                Sesi telah berakhir, silahkan login ulang!
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
-				<div class="form-group form-floating-label">
-					<input id="username" name="username" type="text" class="form-control input-border-bottom" required="">
-					<label for="username" class="placeholder">Username</label>
-				</div>
-				<div class="form-group form-floating-label">
-					<input id="password" name="password" type="password" class="form-control input-border-bottom" required="">
-					<label for="password" class="placeholder">Password</label>
-					<div class="show-password">
-						<i class="flaticon-interface"></i>
+                <?php if (isset($_GET['pesan'])) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php if ($_GET['pesan'] == 'gagal') : ?>
+                            Email atau Password salah!
+                        <?php endif; ?>
+                        <?php if ($_GET['pesan'] == 'refresh') : ?>
+                            Sesi telah berakhir, silahkan login ulang!
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+				<form action="proses.php" method="post">
+					<div class="form-group form-floating-label">
+						<input id="username" name="username" type="text" class="form-control input-border-bottom" required id="username">
+						<label for="username" class="placeholder">Username</label>
 					</div>
-				</div>
-				<div class="row form-sub m-0">
-					<div class="custom-control custom-checkbox">
-						<input type="checkbox" class="custom-control-input" id="rememberme">
+					<div class="form-group form-floating-label">
+						<input id="password" name="password" type="password" class="form-control input-border-bottom" required id="password">
+						<label for="password" class="placeholder">Password</label>
 					</div>
-				</div>
-				<div class="form-action mb-3">
-					<a href="#" class="btn btn-primary btn-rounded btn-login">Sign In</a>
-				</div>
-				<div class="login-account">
-					<span class="msg">Don't have an account yet ?</span>
-					<a href="#" id="show-signup" class="link">Sign Up</a>
-				</div>
+					<div class="form-action mb-3">
+						<button type="submit" class="btn btn-primary">Log In</button>
+					</div>
+					<div class="login-account">
+						<span class="msg">Don't have an account yet ?</span>
+						<a href="../register/index.php" id="show-signup" class="link">Sign Up</a>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

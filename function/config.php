@@ -29,7 +29,7 @@ class Database
     public function login($email, $password)
     {
 
-        $getUserPassword = $this->query("SELECT * FROM user WHERE email LIKE ? ", array($email), true)['password'];
+        $getUserPassword = $this->query("SELECT * FROM user WHERE username LIKE ? ", array($email), true)['password'];
 
         if (password_verify($password, $getUserPassword)) {
             return "OK:LOGGED";
