@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jun 2025 pada 11.58
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Waktu pembuatan: 16 Jun 2025 pada 11.54
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `database`
+-- Database: `dairy`
 --
 
 -- --------------------------------------------------------
@@ -84,7 +84,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `email`, `password`, `alamat`, `role`) VALUES
-(1, 'Nada', 'ndchn', 'ndchn@gmail.com', 'ndchn123', 'Rumbai', 'admin');
+(1, 'Nada', 'ndchn', 'ndchn@gmail.com', 'ndchn123', 'Rumbai', 'admin'),
+(2, 'Nora', 'noraneko', 'nora@gmail.com', '$2y$10$Y7hOWSeILUM6rEzd2nup8.FCNumX97GfOdPBkBtK7DA', 'Rumbai', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -146,7 +147,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
